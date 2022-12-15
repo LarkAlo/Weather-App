@@ -25,7 +25,6 @@ function FormattedDate(props) {
     </span>
   );
 }
-
 //Weather
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -55,7 +54,7 @@ function Weather(props) {
   }
 
   function search() {
-    const apiKey = "eac360db5fc86ft86450f3693e73o43f";
+    const apiKey = "be60748992fab0f5da8162563fb21245";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
@@ -64,13 +63,6 @@ function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <a
-          href="https://www.shecodes.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/logo.png" className="logo" alt="SheCodes Logo" />
-        </a>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9 ">
@@ -134,8 +126,9 @@ function WeatherForecast(props) {
       </div>
     );
   } else {
-    let apiKey = "eac360db5fc86ft86450f3693e73o43f";
+    let apiKey = "be60748992fab0f5da8162563fb21245";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=metric`;
+
     axios.get(apiUrl).then(handleForecastResponse);
 
     return null;
