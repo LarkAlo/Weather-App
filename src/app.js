@@ -1,5 +1,6 @@
 //FormattedDate
-function FormattedDate(props) {
+function formatDate() {
+  let now = new Date();
   let days = [
     "Sunday",
     "Monday",
@@ -9,22 +10,20 @@ function FormattedDate(props) {
     "Friday",
     "Saturday",
   ];
-  let day = days[props.date.getDay()];
-  let hours = props.date.getHours();
+  let day = days[now.getDay()];
+  let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-
-  let minutes = props.date.getMinutes();
+  let minutes = now.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return (
-    <span>
-      {day} {hours}:{minutes}
-    </span>
-  );
+  let today = document.querySelector("#currentDate");
+  today.innerHTML = `${day} ${hours}:${minutes}`;
 }
+formatDate();
+
 //Weather
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -95,6 +94,29 @@ function Weather(props) {
   }
 }
 
+//Search
+function searchCity(event) {
+  event.preventDefault();
+  let currentCity = document.querySelector("#search-input");
+  let newCity = document.querySelector("currentCity");
+  newCity.innerHTML = currentCity.value;
+}
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchCity);
+
+//SearchCity
+function searchCity(event) {
+  event.preventDefault();
+  let apiKey = "667d9f573c8af4c33457be5d561a9148";
+  let cityName = document.querySelector("#search-input").value;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showWeather);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
+
 //WeatherForecast
 function WeatherForecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -133,6 +155,19 @@ function WeatherForecast(props) {
 
     return null;
   }
+}
+//show weather
+function showWeather(response) {
+  document.querySelector("#currentCity").innerHTML = response.data.name;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector("#Humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#Wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 //WeatherForecastPreview

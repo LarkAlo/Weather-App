@@ -10,22 +10,24 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/styles.css" />
     <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
-  <body cz-shortcut-listen="true">
+  <body>
     <div id="root">
       <div class="App">
         <div class="container">
           <div class="Weather">
             <a></a>
-            <form>
+            <form id="search-form">
               <div class="row">
                 <div class="col-9">
                   <input
                     type="search"
                     placeholder="Enter a city.."
                     class="form-control search-input"
+                    id="search-input"
                   />
                 </div>
                 <div class="col-3 p-0">
@@ -40,16 +42,16 @@
             <div class="WeatherInfo">
               <div class="row">
                 <div class="col-6">
-                  <h1>El Paso</h1>
+                  <h1 id="currentCity">El Paso</h1>
                   <ul>
                     <li>
-                      <span> Thursday 10:49 </span>
-                      , broken clouds
+                      <span id="currentDate"> Thursday 10:49 </span>
+                      , <span id="description">broken clouds</span>
                     </li>
                     <li>
-                      Humidity:
+                      Humidity: <span id="Humidity"></span>
                       <strong> 68% </strong>
-                      , Wind:
+                      , Wind: <span id="Wind"></span>
                       <strong> 4,92 km/h </strong>
                     </li>
                   </ul>
