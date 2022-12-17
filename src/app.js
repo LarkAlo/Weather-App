@@ -34,7 +34,6 @@ function searchCity(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
-//SearchCity
 function searchCity(event) {
   event.preventDefault();
   let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
