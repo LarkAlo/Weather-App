@@ -94,6 +94,10 @@ footer {
   line-height: 1;
 }
 
+.units a {
+  text-decoration: none;
+}
+
 .Weather canvas {
   margin: 10px 0;
 }
