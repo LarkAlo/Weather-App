@@ -2,6 +2,11 @@ body {
   background: #f9f7fe;
 }
 
+footer {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
   max-width: 800px;
   margin: 60px auto;
@@ -65,6 +70,7 @@ body {
 .Weather li {
   font-weight: 500;
   margin-bottom: 5px;
+  text-transform: capitalize;
   color: rgba(39, 33, 66, 0.4);
   font-size: 16px;
   line-height: 20px;
@@ -74,6 +80,7 @@ body {
 .Weather li strong {
   color: #f65282;
   font-weight: normal;
+  text-transform: capitalize;
 }
 
 .Weather .temperature {

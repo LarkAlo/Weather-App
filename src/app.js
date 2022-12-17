@@ -49,6 +49,7 @@ form.addEventListener("submit", searchCity);
 
 //showWeather
 function showWeather(response) {
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#currentCity").innerHTML = response.data.name;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
@@ -59,4 +60,10 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
+//weatherforecast preview
