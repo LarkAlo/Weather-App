@@ -96,6 +96,11 @@ footer {
 
 .units a {
   text-decoration: none;
+  cursor: default;
+}
+
+.units .active {
+  color: rgb(33, 33, 33);
 }
 
 .Weather canvas {
