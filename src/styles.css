@@ -1,5 +1,16 @@
 body {
-  background: #f9f7fe;
+  background: linear-gradient(
+    to top,
+    #505285 0%,
+    #585e92 12%,
+    #65689f 25%,
+    #7474b0 37%,
+    #7e7ebb 50%,
+    #8389c7 62%,
+    #9795d4 75%,
+    #a2a1dc 87%,
+    #b5aee4 100%
+  );
 }
 
 footer {
@@ -40,7 +51,7 @@ footer {
 }
 
 .Weather .btn {
-  background: #885df1;
+  background: #5e63b6;
   font-weight: bold;
   font-size: 16px;
   padding: 15px 0;
