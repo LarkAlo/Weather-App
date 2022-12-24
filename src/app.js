@@ -24,6 +24,7 @@ function formatDate() {
 }
 formatDate();
 
+//weatherforecast
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
