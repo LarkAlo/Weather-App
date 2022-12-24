@@ -154,7 +154,7 @@ footer {
   opacity: 0.6;
 }
 
-.Weather .WeatherForecast canvas {
+.Weather .WeatherForecast img {
   display: block;
   margin: 20px auto;
 }
