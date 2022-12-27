@@ -81,23 +81,21 @@ function getForecast(coordinates) {
 }
 
 //searchCity
-function searchCity(event) {
+function search(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#search-input");
-  let newCity = document.querySelector("currentCity");
-  newCity.innerHTML = currentCity.value;
+  searchCity(currentCity.value);
 }
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", search);
 
-function searchCity(event) {
-  event.preventDefault();
+function searchCity(city) {
   let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
-  let cityName = document.querySelector("#search-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+
+searchCity("El Paso");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
