@@ -1,14 +1,16 @@
 body {
   background: linear-gradient(
-    90deg,
-    rgb(255, 157, 129) 24.3%,
-    rgb(255, 78, 78) 78.3%
+    to top,
+    rgb(255, 8, 68) 0%,
+    rgb(255, 177, 153) 100%
   );
 }
 
 footer {
   font-size: small;
   font-family: Arial, Helvetica, sans-serif;
+  color: #45171d;
+  text-align: center;
 }
 
 .App {
@@ -19,15 +21,15 @@ footer {
 .Weather {
   font-family: "Cerebri-Sans", Helvetica, Arial, sans-serif;
   background: transparent;
-  border-radius: 16px;
-  box-shadow: 0px 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 24px;
+  box-shadow: 0px 30px 50px #e84a5f;
   padding: 40px;
-  color: rgb(135, 135, 135);
+  color: #e84a5f;
 }
 
 .Weather form {
   margin-top: 40px;
-  border-bottom: 1px solid #f9f7fe;
+  border-bottom: 1px solid #fecea8;
   padding-bottom: 30px;
 }
 
@@ -37,7 +39,7 @@ footer {
   padding: 15px 20px;
   display: inline-block;
   border-radius: 6px;
-  color: rgba(39, 33, 66, 0.4);
+  color: #fecea8;
   font-size: 16px;
   height: 50px;
   line-height: 20px;
@@ -50,11 +52,12 @@ footer {
   padding: 15px 0;
   border: none;
   height: 50px;
+  color: #fecea8;
 }
 
 .Weather .search-input::placeholder {
   line-height: 20px;
-  color: #f9f7fe;
+  color: #fecea8;
 }
 
 .Weather h1 {
@@ -63,7 +66,7 @@ footer {
   font-weight: bold;
   font-size: 38px;
   line-height: 48px;
-  color: #272142;
+  color: #e84a5f;
 }
 
 .Weather ul {
@@ -89,7 +92,7 @@ footer {
 
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #e84a5f;
   margin-left: 5px;
   font-weight: 400;
   margin-left: 10px;
@@ -124,7 +127,7 @@ footer {
 .WeatherForecast {
   text-align: center;
   margin: 40px 0;
-  border-bottom: 1px solid #f9f7fe;
+  border-bottom: 1px solid #e84a5f;
   padding-bottom: 50px;
 }
 
@@ -140,7 +143,7 @@ footer {
   font-style: normal;
   font-size: 18px;
   font-weight: bold;
-  color: #272142;
+  color: #45171d;
 }
 
 .Weather .WeatherForecast img {
